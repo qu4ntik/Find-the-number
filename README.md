@@ -1,8 +1,9 @@
 # Find-the-number
 
 My first little python game.
-Your job is to find a random number between two values, X and Y
+Your job is to find a random number between two values, X and Y.
 You can change theses values in the first lines of the code in the python file. The default settings are X=1, Y=100
+
 You can enter a number proposition every time from just running the file, I made a input() for that.
 
 The main challenge for this game is not the game itself but all the debugging I made, it was a first one for me.
