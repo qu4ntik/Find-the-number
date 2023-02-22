@@ -14,3 +14,8 @@ Open the python file, change the X and Y if you want and run it one time to setu
 ![Capture d’écran 2023-02-22 154222](https://user-images.githubusercontent.com/113895291/220657562-ab683787-4396-487d-aa5c-164746a27181.png)
 
 ![Capture d’écran 2023-02-22 154512](https://user-images.githubusercontent.com/113895291/220657584-c5691c12-23bf-4a57-a518-dead06e0f32a.png)
+
+Debugging exemple :
+
+![Capture d’écran 2023-02-22 160826](https://user-images.githubusercontent.com/113895291/220663622-197736c2-2165-4f5f-ad32-809c17e673c4.png)
+
