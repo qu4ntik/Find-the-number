@@ -1,9 +1,13 @@
+#find the proposition between X and Y ! (need to start it 2 times if playing for very first time) ----------------------------------------------------
+X = 1
+Y = 100
+#-------------------------------------------------------------------------------------------------------------------------------------------------------
+
 import random
 import pickle
 import os
-import json
 
-print("version_name = a0.3_1602 | Time worked on : 8h \n")
+print("version_name = aP0.4_2202 | Time worked on : 9h \n")
 
 # Get the absolute path of the current Python script
 python_file_dir = os.path.dirname(os.path.abspath(__file__))
@@ -105,7 +109,22 @@ class StartGame():
 
                 #else print résultat negatif
                 else:
-                    print(f"# Your guess is {self.proposition}                        #\n# Sadly, you didn't found it...          #\n#                                        #")
+                    #correction du décalage du # par rapport a la proposition
+                    if self.proposition in range(0, 10):
+                        print(f"# Your guess is {self.proposition}                        #\n# Sadly, you didn't found it...          #\n#                                        #")
+
+                    if self.proposition in range(10, 100):
+                        print(f"# Your guess is {self.proposition}                       #\n# Sadly, you didn't found it...          #\n#                                        #")
+
+                    if self.proposition in range(100, 1000):
+                        print(f"# Your guess is {self.proposition}                      #\n# Sadly, you didn't found it...          #\n#                                        #")
+
+                    if self.proposition in range(1000, 10000):
+                        print(f"# Your guess is {self.proposition}                     #\n# Sadly, you didn't found it...          #\n#                                        #")
+                        
+                    if self.proposition in range(10000, 100000) or self.proposition >= 100000:
+                        print(f"# Your guess is {self.proposition}                    #\n# Sadly, you didn't found it...          #\n#                                        #")
+
                     self.win = False
 
         #si le fichier pickle n'existe pas, alors on le créee.
@@ -189,14 +208,41 @@ class StartGame():
             pickle.dump(self.dict_count, f)
 
         #correction de l'erreur lors du premier lancement
-        try:
-            
+        try:       
             #f-strings count au singulier/pluriel
             if self.win == False:
-                if self.dict_count['count'] in range(2):
-                    print(f"# Your total number of attempt is {self.dict_count['count']}     #")
+                if self.dict_count['count'] == 1:
+                    #correction du décalage de #
+                    if self.dict_count['count'] in range(0, 10):
+                        print(f"# Your total number of attempt is {self.dict_count['count']}      #")
+
+                    if self.dict_count['count'] in range(10, 100):
+                        print(f"# Your total number of attempt is {self.dict_count['count']}      #")
+
+                    if self.dict_count['count'] in range(100, 1000):
+                        print(f"# Your total number of attempt is {self.dict_count['count']}      #")
+
+                    if self.dict_count['count'] in range(1000, 10000):
+                        print(f"# Your total number of attempt is {self.dict_count['count']}      #")
+
+                    if self.dict_count['count'] in range(10000, 100000) or self.dict_count['count'] >= 100000:
+                        print(f"# Your total number of attempt is {self.dict_count['count']}      #")
+                        
                 else:
-                    print(f"# Your total number of attempt is {self.dict_count['count']}     #")
+                    if self.dict_count['count'] in range(0, 10):
+                        print(f"# Your total number of attempts is {self.dict_count['count']}     #")
+
+                    if self.dict_count['count'] in range(10, 100):
+                        print(f"# Your total number of attempts is {self.dict_count['count']}    #")
+
+                    if self.dict_count['count'] in range(100, 1000):
+                        print(f"# Your total number of attempts is {self.dict_count['count']}   #")
+
+                    if self.dict_count['count'] in range(1000, 10000):
+                        print(f"# Your total number of attempts is {self.dict_count['count']}  #")
+
+                    if self.dict_count['count'] in range(10000, 100000) or self.dict_count['count'] >= 100000:
+                        print(f"# Your total number of attempts is {self.dict_count['count']} #")
 
             if self.win == True:
                 #reset du count
@@ -212,11 +258,6 @@ class StartGame():
 
             with open(proposition_input_path, "wb") as f:
                 pickle.dump(self.proposition, f)
-
-#find the proposition between X and Y ! (need to start it 2 times if playing for very first time) ----------------------------------------------------
-X = 1
-Y = 100
-#-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #essayer de faire en sorte de faire une boucle while qui fait que tant que proposition est pas égale a random alors on continue 
 #with open(proposition_input_path, "rb") as f:
